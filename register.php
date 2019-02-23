@@ -3,7 +3,6 @@
 	$u = new Usuario;
  ?>
 
-
 <html lang="pt-br">
 	<head>
 		<meta charset="utf-8"/>
@@ -23,38 +22,43 @@
 			<input type="password" name="senha" placeholder="Senha"
 			 maxlength="15">
 			<input type="password" name="confirmar_senha" placeholder="Confirmar Senha" maxlength="15">
-			<input type="submit" placeholder="CADASTRAR">	
+			<input type="submit" value="Cadastrar">	
 		</form>
 		</div>
+
 		<?php 
 			//verificar se a pessoa clicou no botão casdatrar
 		if(isset($_POST['nome_completo'])){
-			$nome_completo = addcslashes($_POST['nome_completo']);
-			$usuario = addcslashes($_POST['usuario']);
-			$curso = addcslashes($_POST['curso']);
-			$Semestre= addcslashes($_POST['semestre']);
-			$idade = addcslashes($_POST['idade']);
-			$email = addcslashes($_POST['email']);
-			$senha = addcslashes($_POST['senha']);
-			$confirmar_senha = addcslashes($_POST['confirmar_senha']);
-			if(!empty(nome_completo) && !empty(usuario) && !empty(curso) && !empty(semestre) && !empty(idade) && !empty(email) && !empty(senha) && !empty(confirmar_senha) ){
+			$nome_completo = addslashes($_POST['nome_completo']);
+			$usuario = addslashes($_POST['usuario']);
+			$curso = addslashes($_POST['curso']);
+			$Semestre= addslashes($_POST['semestre']);
+			$idade = addslashes($_POST['idade']);
+			$email = addslashes($_POST['email']);
+			$senha = addslashes($_POST['senha']);
+			$confirmar_senha = addslashes($_POST['confirmar_senha']);
+			if(!empty($nome_completo) && !empty($usuario) && !empty($curso) && !empty($semestre) && !empty($idade) && !empty($email) && !empty($senha) && !empty($confirmar_senha) ){
 				$u->conectar("play_chest","localhost","root","");
 				if($u->msgErro = ""){
 					if($senha == $confirmar_senha){
-						if($u->Cadastrar($nome_completo,$usuario,$curso,$semestre,$idade,$email,$senha)){
-							echo ("Cadastrado com sucesso! Acesse para entrar!");
-						}else{
-							echo "Email já cadastrado" ;
+						if($u->cadastrar($nome_completo,$usuario,$curso,$semestre,$idade,$email,$senha)){
+							echo "Cadastrado com sucesso! Acesse para entrar!";
+								}
+							else{
+								echo "Email já cadastrado" ;
+							}
 						}
-					}else{
-						echo "Senha e Confirmar Senha não correspondem";
+							else{
+								echo "Senha e Confirmar Senha não correspondem";
 					}							
-				}else{
-					echo" Erro: ".$u->msgErro;
 				}
-			}else{
-				echo "Preencha todos os dados!";
+							else{
+								echo" Erro: ".$u->msgErro;
 			}
+		}
+						else{
+								echo "Preencha todos os dados!";
+	}
 }
 			
 	
