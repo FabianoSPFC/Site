@@ -32,14 +32,14 @@
 			$nome_completo = addslashes($_POST['nome_completo']);
 			$usuario = addslashes($_POST['usuario']);
 			$curso = addslashes($_POST['curso']);
-			$Semestre= addslashes($_POST['semestre']);
+			$semestre= addslashes($_POST['semestre']);
 			$idade = addslashes($_POST['idade']);
 			$email = addslashes($_POST['email']);
 			$senha = addslashes($_POST['senha']);
 			$confirmar_senha = addslashes($_POST['confirmar_senha']);
 			if(!empty($nome_completo) && !empty($usuario) && !empty($curso) && !empty($semestre) && !empty($idade) && !empty($email) && !empty($senha) && !empty($confirmar_senha)){
 				$u->conectar("play_chest","localhost","root","");
-				if($u->msgErro = ""){
+				if($u->msgErro == ""){
 					if($senha == $confirmar_senha){
 						if($u->cadastrar($nome_completo,$usuario,$curso,$semestre,$idade,$email,$senha)){
 							echo "Cadastrado com sucesso! Acesse para entrar!";
