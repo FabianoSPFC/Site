@@ -18,13 +18,13 @@ Class Usuario
 		//Verificar se ha email cadastrado 
 		$sql = $pdo ->prepare("SELECT id_usuario FROM usuarios WHERE email = :e");
 		$sql ->bindValue(":e", $email);
-		$sql -execute();
+		$sql ->execute();
 		if($sql->rowCount()>0){
 			return false;
 		}
 		//caso não
 		else{
-			$sql = $pdo->prepare("INSERT usuarios(nome_completo,usuario,curso,semestre,idade,email,senha) VALUES(:n, :u, :c, :s, :i, :e, :p)");
+			$sql = $pdo->prepare("INSERT INTO usuarios (nome_completo,usuario,curso,semestre,idade,email,senha) VALUES(:n, :u, :c, :s, :i, :e, :p)");
 			$sql ->bindValue(":n", $nome_completo);
 			$sql ->bindValue(":u", $usuario);
 			$sql ->bindValue(":c", $curso);
@@ -43,7 +43,7 @@ Class Usuario
 	public function logar($email,$senha){
 		global $pdo;
 //verificar se o email e senha estao cadastrados 
-		$sql -> $pdo("SELECT id_usuario FROM usuarios WHERE email = :e AND senha = :p");
+		$sql = $pdo->prepare("SELECT id_usuario FROM usuarios WHERE email = :e AND senha = :p");
 		$sql ->bindValue(":e", $email);
 		$sql ->bindValue(":p", md5($senha));
 		$sql ->execute();
