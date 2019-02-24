@@ -22,7 +22,7 @@
 			<input type="password" name="senha" placeholder="Senha"
 			 maxlength="15">
 			<input type="password" name="confirmar_senha" placeholder="Confirmar Senha" maxlength="15">
-			<input type="submit" value="Cadastrar">	
+			<input type="submit" value="Cadastrar">			
 		</form>
 		</div>
 
@@ -42,22 +42,36 @@
 				if($u->msgErro == ""){
 					if($senha == $confirmar_senha){
 						if($u->cadastrar($nome_completo,$usuario,$curso,$semestre,$idade,$email,$senha)){
-							echo "Cadastrado com sucesso! Acesse para entrar!";
+							?>
+							<div id= "msg-sucesso">Cadastrado com sucesso! Acesse para entrar!</div>
+							<?php
 								}
 							else{
-								echo "Email já cadastrado" ;
+								?>
+								<div class ="msg-erro">Email já cadastrado</div>
+								
+								<?php
 							}
 						}
 							else{
-								echo "Senha e Confirmar Senha não correspondem";
+								?>
+								<div class ="msg-erro">Senha e Confirmar Senha não correspondem</div>
+								<?php
 					}							
 				}
 							else{
-								echo" Erro: ".$u->msgErro;
+									?>
+								<div class ="msg-erro">
+									<?php echo " Erro: ".$u->msgErro;?></div>
+								<?php	
+								
 			}
 		}
 						else{
-								echo "Preencha todos os dados!";
+							?>
+								<div class ="msg-erro">Preencha todos os dados!</div>
+								<?php
+								
 	}
 }
 			
