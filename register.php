@@ -29,6 +29,7 @@
 		<?php 
 			//verificar se a pessoa clicou no botão casdatrar
 		if(isset($_POST['nome_completo'])){
+			
 			$nome_completo = addslashes($_POST['nome_completo']);
 			$usuario = addslashes($_POST['usuario']);
 			$curso = addslashes($_POST['curso']);

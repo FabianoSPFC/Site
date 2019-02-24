@@ -20,7 +20,8 @@
 		</form>
 		</div>
 		<?php 
-			if(isset($_POST['email'])){			
+			if(isset($_POST['email'])){	
+					
 			$email = addslashes($_POST['email']);
 			$senha = addslashes($_POST['senha']);	
 
