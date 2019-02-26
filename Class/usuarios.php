@@ -36,14 +36,11 @@ Class Usuario
 			$sql ->execute();
 			return true;
 		}
-
-
-
 	}
 
 	public function logar($email,$senha){
 		global $pdo;
-//verificar se o email e senha estao cadastrados 
+			//verificar se o email e senha estao cadastrados 
 		$sql = $pdo->prepare("SELECT id_usuario FROM usuarios WHERE email = :e AND senha = :p");
 		$sql ->bindValue(":e", $email);
 		$sql ->bindValue(":p", md5($senha));
