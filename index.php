@@ -30,7 +30,7 @@
 				if($u->msgErro == ""){
 
 					if($u->logar($email,$senha)){
-						header("location: areaPrivada.php");
+						header("location: cadastro.html");
 				}
 
 			

@@ -49,7 +49,7 @@
 								}
 							else{
 								?>
-								<div class ="msg-erro">Email já cadastrado</div>
+								<div class ="">Email já cadastrado</div>
 								
 								<?php
 							}
