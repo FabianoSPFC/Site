@@ -21,15 +21,23 @@
         $link = $conection->conect_mysql();
         if($_SERVER["REQUEST_METHOD"] == "POST"){
         $questao = $_POST["questao"];
+        $arquivo = $_POST["arquivo"];
         $letra_a = $_POST["A"];        
         $letra_b = $_POST["B"];        
         $letra_c = $_POST["C"];        
         $letra_d = $_POST["D"];        
         $letra_e = $_POST["E"];
-        $resposta= $_POST["resposta"];             
+        $resposta= $_POST["resposta"]; 
+        $sql_query = "INSERT INTO created_questions(questao,letra_a,letra_b,letra_c,letra_d,letra_e,resposta) VALUES('$questao','$letra_a','$letra_b','$letra_c','$letra_d','$letra_e','$resposta');";     
+        if(mysqli_query($link,$sql_query)){
+            echo "Deu certo";
+        }else{
+            echo "Deu errado".mysqli_error($link);
+        }       
         }
     ?>
     <p>Questão: <?php echo $questao?></p><br>
+    <img src=<?php echo $arquivo; ?> alt=""><br>
     <p>Letra A: <?php echo $letra_a?></p><br>
     <p>Letra B: <?php echo $letra_b?></p><br>
     <p>Letra C: <?php echo $letra_c?></p><br>
