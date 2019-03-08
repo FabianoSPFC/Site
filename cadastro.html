@@ -2,7 +2,7 @@
 <html>
 <head>
   
-	<title>Página de cadastro</title>
+	<title>Play Chest</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="CSS/estilo.css">
 </head>
@@ -10,31 +10,31 @@
 
 	<div id="cadastro">
 		<h3 align="center">Cadastro de perguntas</h3>
-		<form>
-  			<textarea id="text" placeholder="Digite aqui a pergunta"></textarea></br></br>
+		<form method="post" action="verificacao.php">
+  			<textarea id="text" name="questao" placeholder="Digite aqui a pergunta" required></textarea></br></br>
   			<span>Ou envie uma imagem (opcional)</span>
   			</br>
   			<input id="arquivo" type="file"></br></br>
   			<div id="respostas">
   				<h4 align="center" id="texto">Escreva aqui as respostas</h4></br>
-  				<textarea class="letra" placeholder="letra A"></textarea></br>
-  				<textarea class="letra" placeholder="letra B"></textarea></br>
-  				<textarea class="letra" placeholder="letra C"></textarea></br>
-  				<textarea class="letra" placeholder="letra D"></textarea></br>
-  				<textarea class="letra" placeholder="letra E"></textarea></br>
+  				<textarea class="letra" placeholder="letra A" name='A' required></textarea></br>
+  				<textarea class="letra" placeholder="letra B" name='B' required></textarea></br>
+  				<textarea class="letra" placeholder="letra C" name='C' required></textarea></br>
+  				<textarea class="letra" placeholder="letra D" name='D' required></textarea></br>
+  				<textarea class="letra" placeholder="letra E" name='E' required></textarea></br>
   			</div>
   			</br>
   			<span id="centro">Marque a opção correta</span></br>
   			<div id="resp-certa">
-  				<input type="radio" name="gender" value="male" checked> letra A
-  				<input type="radio" name="gender" value="female"> letra B
-  				<input type="radio" name="gender" value="female"> letra C
-  				<input type="radio" name="gender" value="female"> letra D
-  				<input type="radio" name="gender" value="female"> letra E
+  				<input type="radio" value="Letra A" name="resposta" required> letra A
+				<input type="radio" value="Letra B" name="resposta"  > letra B
+  				<input type="radio" value="Letra C" name="resposta" > letra C
+  				<input type="radio" value="Letra D" name="resposta" > letra D
+  				<input type="radio" value="Letra E" name="resposta" > letra E
   			</div>
   			</br>
   			<div id="enviar-resp">
-  				<button id="enviar" type="submit" onclick="alert('Pergunta enviada com sucesso!!')">Enviar pergunta</button>
+  				<input id="enviar" type="submit" value="submit" name="submit">Enviar pergunta</input>
   			</div>
   		</form>
 	</div>
