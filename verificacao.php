@@ -15,7 +15,11 @@
     </style>
 </head>
 <body>
-    <?php
+    <?php    
+        require('db.php');
+        $conection = new db();
+        $link = conection -> conection_to_database();
+
         if($_SERVER["REQUEST_METHOD"] == "POST"){
         $questao = $_POST["questao"];
         $letra_a = $_POST["A"];        
