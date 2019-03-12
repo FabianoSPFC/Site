@@ -14,7 +14,7 @@ Class Usuario
 		
 	}	
 
-	public function cadastrar($nome_completo,$usuario,$curso,$semestre,$idade,$email,$senha){
+	public function cadastrar($nome_completo,$usuario,$instituicao,$curso,$semestre,$idade,$email,$senha){
 		global $pdo;
 		//Verificar se ha email cadastrado 
 		$sql = $pdo ->prepare("SELECT id_usuario FROM usuarios WHERE email = :e");
@@ -25,9 +25,10 @@ Class Usuario
 		}
 		//caso não
 		else{
-			$sql = $pdo->prepare("INSERT INTO usuarios (nome_completo,usuario,curso,semestre,idade,email,senha) VALUES(:n, :u, :c, :s, :i, :e, :p)");
+			$sql = $pdo->prepare("INSERT INTO usuarios (nome_completo,usuario,instituicao,curso,semestre,idade,email,senha) VALUES(:n, :u, :t, :c, :s, :i, :e, :p)");
 			$sql ->bindValue(":n", $nome_completo);
 			$sql ->bindValue(":u", $usuario);
+			$sql ->bindValue(":t", $instituicao);
 			$sql ->bindValue(":c", $curso);
 			$sql ->bindValue(":s", $semestre);
 			$sql ->bindValue(":i", $idade);
