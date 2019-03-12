@@ -19,7 +19,7 @@
         require('db.php');
         $conection = new db();
         $link = $conection->conect_mysql();
-        if($_SERVER["REQUEST_METHOD"] == "POST"){
+        if($_SERVER["REQUEST_METHOD"] == "GET"){
         $questao = $_POST["questao"];
         $arquivo = $_POST["arquivo"];
         $letra_a = $_POST["A"];        
@@ -37,7 +37,7 @@
         }
     ?>
     <p>Questão: <?php echo $questao?></p><br>
-    <img src=<?php echo $arquivo; ?> alt=""><br>
+    <p>Imagem: <?php echo $arquivo;?> </p><br>
     <p>Letra A: <?php echo $letra_a?></p><br>
     <p>Letra B: <?php echo $letra_b?></p><br>
     <p>Letra C: <?php echo $letra_c?></p><br>
