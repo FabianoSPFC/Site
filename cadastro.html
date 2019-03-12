@@ -10,7 +10,11 @@
 
 	<div id="cadastro">
 		<h3 align="center">Cadastro de perguntas</h3>
+<<<<<<< HEAD
 		<form method="POST" action="verificacao.php">
+=======
+		<form method="post" enctype="multipart/form-data" action="verificacao.php">
+>>>>>>> 18fea57292596e2d6eb3e1cee39ec098f25f3f3e
   			<textarea id="text" name="questao" placeholder="Digite aqui a pergunta" required></textarea></br></br>
   			<span>Ou envie uma imagem (opcional)</span>
   			</br>
@@ -26,15 +30,15 @@
   			</br>
   			<span id="centro">Marque a opção correta</span></br>
   			<div id="resp-certa">
-  				<input type="radio" value="Letra A" name="resposta" required> letra A
-				<input type="radio" value="Letra B" name="resposta"  > letra B
-  				<input type="radio" value="Letra C" name="resposta" > letra C
-  				<input type="radio" value="Letra D" name="resposta" > letra D
-  				<input type="radio" value="Letra E" name="resposta" > letra E
+  				<input type="radio" value="A" name="resposta" required> letra A
+				<input type="radio" value="B" name="resposta"  > letra B
+  				<input type="radio" value="C" name="resposta" > letra C
+  				<input type="radio" value="D" name="resposta" > letra D
+  				<input type="radio" value="E" name="resposta" > letra E
   			</div>
   			</br>
   			<div id="enviar-resp">
-  				<input id="enviar" type="submit" value="submit" name="submit" >Enviar pergunta</input>
+  				<input id="enviar" type="submit" value="submit" name="submit">Enviar pergunta</input>
   			</div>
   		</form>
 	</div>

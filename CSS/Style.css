@@ -90,3 +90,16 @@ div#msg-erro{
 	border:1px solid rgb(165,42,42);
 
 }
+select {
+	display: block;
+	height: 50px;
+	width: 400px;
+	margin: 10px;
+	border-radius: 30px;
+	border:1px solid black;
+	font-size: 16pt;
+	padding: 10px 20px;
+	background-color: rgba(255,255,255,0.01);
+	color: black;
+	outline: none;
+}
