@@ -18,7 +18,7 @@
 
 <body>
     <?php    
-        require('db.php');
+        require('db_connection.php');
         $conection = new db();
         $link = $conection->conect_mysql();
         if($_SERVER["REQUEST_METHOD"] == "GET"){
