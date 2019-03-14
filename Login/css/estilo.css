@@ -1,0 +1,93 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+	background-color: #FAFAFA;
+}
+
+#login-back {
+  width: 425px;
+  height: 280px;
+  background-color: #F2F2F2;
+  margin: 200px auto 140px;
+  border-radius: 6px;
+  box-shadow: 0px 1px 10px white;
+}
+
+#login {
+	width: 405px;
+  	height: 260px;
+  	background-color: white;
+  	position: absolute;
+  	margin: 10px;
+  	border-radius: 8px;
+  	box-shadow: 10px 5px 45px black;
+  	overflow: hidden;
+}
+
+#enter-pin {
+	border-bottom: 1px solid black;
+	border-color: #d4def0;
+	background: rgba(212, 222, 240, 0.3);
+	height: 45px;
+	text-align: center;
+	font: bold 14px/45px sans-serif;
+	color: black;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px; 
+	box-shadow: 2px 0px 3px #dedede;
+}
+
+#pin {
+	width: 124px;
+	height: 50px;
+	font-size: 30px;
+	padding: 5px;
+	background-color: #f2f5f7;
+	margin: 20px auto 14px;
+	border-radius: 4px;
+}
+
+#login-pin {
+	height: 40px;
+	width: 100px;
+	margin: 3px 10px;
+	text-align: center;
+	font-size: 30px;
+	border-radius: 3px;
+	box-shadow: 1px 1px 10px black;
+}
+
+.button-pin {
+	margin-top: 20px;
+	margin-left: 165px;
+	cursor: pointer;
+	padding: 10px 20px;
+	border-radius: 20px;
+	font: bold 14px sans-serif;
+	border: none;
+	background-color: rgb(212, 222, 240);
+	box-shadow: 1px 2px 10px black;
+}
+
+.button-pin:active {
+	transform: translateY(1px);
+}
+
+.button-pin:hover {
+	opacity: 0.8;
+}
+
+#login-pin:hover {
+	opacity: 0.9;
+}
+
+#enter-pin:hover {
+	opacity: 0.8;
+}
+
+#pin:hover {
+	opacity: 0.9;
+}
