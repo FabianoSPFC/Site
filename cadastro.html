@@ -13,26 +13,149 @@
 	<div id="cadastro">
 		<h3 align="center">Cadastro de perguntas</h3>
 		<form method="post" enctype="multipart/form-data" action="verificacao.php">
-			<textarea id="text" name="questao" placeholder="Digite aqui a pergunta" required></textarea></br></br>
+			<h3 align="center">Pergunta 1</h3>
+			<textarea id="text" name="questao[0]" placeholder="Digite aqui a pergunta" required></textarea></br></br>
 			<span>Ou envie uma imagem (opcional)</span>
 			</br>
-			<input id="arquivo" name="arquivo" type="file"></br></br>
+			<input id="arquivo" name="arquivo[0]" type="file"></br></br>
 			<div id="respostas">
 				<h4 align="center" id="texto">Escreva aqui as respostas</h4></br>
-				<textarea class="letra" placeholder="letra A" name='A' required></textarea></br>
-				<textarea class="letra" placeholder="letra B" name='B' required></textarea></br>
-				<textarea class="letra" placeholder="letra C" name='C' required></textarea></br>
-				<textarea class="letra" placeholder="letra D" name='D' required></textarea></br>
-				<textarea class="letra" placeholder="letra E" name='E' required></textarea></br>
+				<textarea class="letra" placeholder="letra A" name="A[0]" required></textarea></br>
+				<textarea class="letra" placeholder="letra B" name="B[0]" required></textarea></br>
+				<textarea class="letra" placeholder="letra C" name="C[0]" required></textarea></br>
+				<textarea class="letra" placeholder="letra D" name="D[0]" required></textarea></br>
+				<textarea class="letra" placeholder="letra E" name="E[0]" required></textarea></br>
 			</div>
 			</br>
 			<span id="centro">Marque a opção correta</span></br>
 			<div id="resp-certa">
-				<input type="radio" value="A" name="resposta" required> letra A
-				<input type="radio" value="B" name="resposta"> letra B
-				<input type="radio" value="C" name="resposta"> letra C
-				<input type="radio" value="D" name="resposta"> letra D
-				<input type="radio" value="E" name="resposta"> letra E
+				<input type="radio" value="A" name="resposta[0]" required> letra A
+				<input type="radio" value="B" name="resposta[0]"> letra B
+				<input type="radio" value="C" name="resposta[0]"> letra C
+				<input type="radio" value="D" name="resposta[0]"> letra D
+				<input type="radio" value="E" name="resposta[0]"> letra E
+			</div><br>
+			<h4 id="resp-certa">Nível de dificuldade:</h4>
+			<div id="resp-certa">
+				<input type="radio" name="dificuldade[0]" value="facil" required>Fácil
+				<input type="radio" name="dificuldade[0]" value="medio"> Médio
+				<input type="radio" name="dificuldade[0]" value="dificil">Díficil
+			</div>
+			</br>
+			<h3 align="center">Pergunta 2</h3>
+			<textarea id="text" name="questao[1]" placeholder="Digite aqui a pergunta" required></textarea></br></br>
+			<span>Ou envie uma imagem (opcional)</span>
+			</br>
+			<input id="arquivo" name="arquivo[1]" type="file"></br></br>
+			<div id="respostas">
+				<h4 align="center" id="texto">Escreva aqui as respostas</h4></br>
+				<textarea class="letra" placeholder="letra A" name="A[1]" required></textarea></br>
+				<textarea class="letra" placeholder="letra B" name="B[1]" required></textarea></br>
+				<textarea class="letra" placeholder="letra C" name="C[1]" required></textarea></br>
+				<textarea class="letra" placeholder="letra D" name="D[1]" required></textarea></br>
+				<textarea class="letra" placeholder="letra E" name="E[1]" required></textarea></br>
+			</div>
+			</br>
+			<span id="centro">Marque a opção correta</span></br>
+			<div id="resp-certa">
+				<input type="radio" value="A" name="resposta[1]" required> letra A
+				<input type="radio" value="B" name="resposta[1]"> letra B
+				<input type="radio" value="C" name="resposta[1]"> letra C
+				<input type="radio" value="D" name="resposta[1]"> letra D
+				<input type="radio" value="E" name="resposta[1]"> letra E
+			</div><br>
+			<h4 id="resp-certa">Nível de dificuldade:</h4>
+			<div id="resp-certa">
+				<input type="radio" name="dificuldade[1]" value="facil" required>Fácil
+				<input type="radio" name="dificuldade[1]" value="medio"> Médio
+				<input type="radio" name="dificuldade[1]" value="dificil">Díficil
+			</div>
+			</br>
+			<h3 align="center">Pergunta 3</h3>
+			<textarea id="text" name="questao[2]" placeholder="Digite aqui a pergunta" required></textarea></br></br>
+			<span>Ou envie uma imagem (opcional)</span>
+			</br>
+			<input id="arquivo" name="arquivo[2]" type="file"></br></br>
+			<div id="respostas">
+				<h4 align="center" id="texto">Escreva aqui as respostas</h4></br>
+				<textarea class="letra" placeholder="letra A" name="A[2]" required></textarea></br>
+				<textarea class="letra" placeholder="letra B" name="B[2]" required></textarea></br>
+				<textarea class="letra" placeholder="letra C" name="C[2]" required></textarea></br>
+				<textarea class="letra" placeholder="letra D" name="D[2]" required></textarea></br>
+				<textarea class="letra" placeholder="letra E" name="E[2]" required></textarea></br>
+			</div>
+			</br>
+			<span id="centro">Marque a opção correta</span></br>
+			<div id="resp-certa">
+				<input type="radio" value="A" name="resposta[2]" required> letra A
+				<input type="radio" value="B" name="resposta[2]"> letra B
+				<input type="radio" value="C" name="resposta[2]"> letra C
+				<input type="radio" value="D" name="resposta[2]"> letra D
+				<input type="radio" value="E" name="resposta[2]"> letra E
+			</div><br>
+			<h4 id="resp-certa">Nível de dificuldade:</h4>
+			<div id="resp-certa">
+				<input type="radio" name="dificuldade[2]" value="facil" required>Fácil
+				<input type="radio" name="dificuldade[2]" value="medio"> Médio
+				<input type="radio" name="dificuldade[2]" value="dificil">Díficil
+			</div>
+			</br>
+			<h3 align="center">Pergunta 4</h3>
+			<textarea id="text" name="questao[3]" placeholder="Digite aqui a pergunta" required></textarea></br></br>
+			<span>Ou envie uma imagem (opcional)</span>
+			</br>
+			<input id="arquivo" name="arquivo[3]" type="file"></br></br>
+			<div id="respostas">
+				<h4 align="center" id="texto">Escreva aqui as respostas</h4></br>
+				<textarea class="letra" placeholder="letra A" name="A[3]" required></textarea></br>
+				<textarea class="letra" placeholder="letra B" name="B[3]" required></textarea></br>
+				<textarea class="letra" placeholder="letra C" name="C[3]" required></textarea></br>
+				<textarea class="letra" placeholder="letra D" name="D[3]" required></textarea></br>
+				<textarea class="letra" placeholder="letra E" name="E[3]" required></textarea></br>
+			</div>
+			</br>
+			<span id="centro">Marque a opção correta</span></br>
+			<div id="resp-certa">
+				<input type="radio" value="A" name="resposta[3]" required> letra A
+				<input type="radio" value="B" name="resposta[3]"> letra B
+				<input type="radio" value="C" name="resposta[3]"> letra C
+				<input type="radio" value="D" name="resposta[3]"> letra D
+				<input type="radio" value="E" name="resposta[3]"> letra E
+			</div><br>
+			<h4 id="resp-certa">Nível de dificuldade:</h4>
+			<div id="resp-certa">
+				<input type="radio" name="dificuldade[3]" value="facil" required>Fácil
+				<input type="radio" name="dificuldade[3]" value="medio"> Médio
+				<input type="radio" name="dificuldade[3]" value="dificil">Díficil
+			</div>
+			</br>
+			<h3 align="center">Pergunta 5</h3>
+			<textarea id="text" name="questao[4]" placeholder="Digite aqui a pergunta" required></textarea></br></br>
+			<span>Ou envie uma imagem (opcional)</span>
+			</br>
+			<input id="arquivo" name="arquivo[4]" type="file"></br></br>
+			<div id="respostas">
+				<h4 align="center" id="texto">Escreva aqui as respostas</h4></br>
+				<textarea class="letra" placeholder="letra A" name="A[4]" required></textarea></br>
+				<textarea class="letra" placeholder="letra B" name="B[4]" required></textarea></br>
+				<textarea class="letra" placeholder="letra C" name="C[4]" required></textarea></br>
+				<textarea class="letra" placeholder="letra D" name="D[4]" required></textarea></br>
+				<textarea class="letra" placeholder="letra E" name="E[4]" required></textarea></br>
+			</div>
+			</br>
+			<span id="centro">Marque a opção correta</span></br>
+			<div id="resp-certa">
+				<input type="radio" value="A" name="resposta[4]" required> letra A
+				<input type="radio" value="B" name="resposta[4]"> letra B
+				<input type="radio" value="C" name="resposta[4]"> letra C
+				<input type="radio" value="D" name="resposta[4]"> letra D
+				<input type="radio" value="E" name="resposta[4]"> letra E
+			</div><br>
+			<h4 id="resp-certa">Nível de dificuldade:</h4>
+			<div id="resp-certa">
+				<input type="radio" name="dificuldade[4]" value="facil" required>Fácil
+				<input type="radio" name="dificuldade[4]" value="medio"> Médio
+				<input type="radio" name="dificuldade[4]" value="dificil">Díficil
 			</div>
 			</br>
 			<div id="enviar-resp">

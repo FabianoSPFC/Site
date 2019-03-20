@@ -28,6 +28,7 @@
         $letra_c = $_POST["C"];
         $letra_d = $_POST["D"];
         $letra_e = $_POST["E"];
+        $dificuldade = $_POST["dificuldade"];
         $resposta = $_POST["resposta"];
         // verifica se foi enviado um arquivo 
         if (isset($_FILES['arquivo']['name']) && $_FILES["arquivo"]["error"] == 0) {
@@ -52,15 +53,15 @@
                 $destino = 'imagens/' . $novoNome;
                 // tenta mover o arquivo para o destino
                 if (@move_uploaded_file($arquivo_tmp, $destino)) {
-                        echo "Arquivo salvo com sucesso em : <strong>" . $destino . "</strong><br />";
-                        // echo "<img src=\"" . $destino . "\" />";
-                    } else
+                    echo "Arquivo salvo com sucesso em : <strong>" . $destino . "</strong><br />";
+                    // echo "<img src=\"" . $destino . "\" />";
+                } else
                     echo "Erro ao salvar o arquivo. Aparentemente você não tem permissão de escrita.<br />";
             } else
                 echo "Você poderá enviar apenas arquivos \"*.jpg;*.jpeg;*.gif;*.png\"<br />";
         } else {
-                echo "Você não enviou nenhum arquivo!";
-            }
+            echo "Você não enviou nenhum arquivo!";
+        }
         $sql_query = "INSERT INTO created_questions(questao,letra_a,letra_b,letra_c,letra_d,letra_e,resposta) VALUES('$questao','$letra_a','$letra_b','$letra_c','$letra_d','$letra_e','$resposta');";
         if (mysqli_query($link, $sql_query)) {
             echo "Deu certo";
@@ -70,28 +71,28 @@
     }
     ?>
     <p>Questão:
-        <?php echo $questao ?>
+        <?php echo $questao[4] ?>
     </p><br>
     <p>Imagem:
         <img src=<?php echo $destino; ?> alt="">
     </p><br>
     <p>Letra A:
-        <?php echo $letra_a ?>
+        <?php echo $letra_a[4] ?>
     </p><br>
     <p>Letra B:
-        <?php echo $letra_b ?>
+        <?php echo $letra_b[4] ?>
     </p><br>
     <p>Letra C:
-        <?php echo $letra_c ?>
+        <?php echo $letra_c[4] ?>
     </p><br>
     <p>Letra D:
-        <?php echo $letra_d ?>
+        <?php echo $letra_d[4] ?>
     </p><br>
     <p>Letra E:
-        <?php echo $letra_e ?>
+        <?php echo $letra_e[4] ?>
     </p><br>
     <p>Resposta:
-        <?php echo $resposta ?>
+        <?php echo $resposta[4] ?>
     </p><br>
 
 </body>
