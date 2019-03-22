@@ -18,10 +18,10 @@
 
 <body>
     <?php    
-        require('db_connection.php');
+        require('db_conncetion.php');
         $conection = new db();
         $link = $conection->conect_mysql();
-        if($_SERVER["REQUEST_METHOD"] == "GET"){
+        if($_SERVER["REQUEST_METHOD"] == "POST"){
         $questao = $_POST["questao"];
         $letra_a = $_POST["A"];        
         $letra_b = $_POST["B"];        
@@ -66,7 +66,7 @@
         {
             echo "Você não enviou nenhum arquivo!";
         }
-        $sql_query = "INSERT INTO created_questions(questao,letra_a,letra_b,letra_c,letra_d,letra_e,resposta) VALUES('$questao','$letra_a','$letra_b','$letra_c','$letra_d','$letra_e','$resposta');";     
+        $sql_query = "INSERT INTO created questions(questao,letra_a,letra_b,letra_c,letra_d,letra_e,resposta) VALUES('$questao','$letra_a','$letra_b','$letra_c','$letra_d','$letra_e','$resposta');";     
         if(mysqli_query($link,$sql_query)){
             echo "Deu certo";
         }else{
@@ -74,16 +74,6 @@
         }       
         }
     ?>
-<<<<<<< HEAD
-    <p>Questão: <?php echo $questao?></p><br>
-    <p>Imagem: <?php echo $arquivo;?> </p><br>
-    <p>Letra A: <?php echo $letra_a?></p><br>
-    <p>Letra B: <?php echo $letra_b?></p><br>
-    <p>Letra C: <?php echo $letra_c?></p><br>
-    <p>Letra D: <?php echo $letra_d?></p><br>
-    <p>Letra E: <?php echo $letra_e?></p><br>
-    <p>Resposta: <?php echo $resposta?></p><br>
-=======
     <p>Questão:
         <?php echo $questao?>
     </p><br>
@@ -108,7 +98,6 @@
     <p>Resposta:
         <?php echo $resposta?>
     </p><br>
->>>>>>> 18fea57292596e2d6eb3e1cee39ec098f25f3f3e
 
 </body>
 

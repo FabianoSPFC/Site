@@ -2,7 +2,7 @@
     class db{
         private $db_host = "localhost";
         private $db_user = "root";
-        private $db_passwd = "password";
+        private $db_passwd = "";
         private $database = "questions";
         
         public function conect_mysql(){
