@@ -17,5 +17,9 @@ class db
         }
         return $con;
     }
+    public function insert($data){
+            var_dump($data);
+        
+    }
 }
  
