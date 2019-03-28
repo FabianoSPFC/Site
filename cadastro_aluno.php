@@ -13,22 +13,22 @@
 		<div id="corpo-form-cad">
 			<h1>Cadastro Aluno</h1>
 			<form method="POST" >
-				<input type="text" name="nome_completo" placeholder="Nome Completo" maxlength="30">	
-            	<input type="text" name="usuario"placeholder="Usuário" maxlength="20" >
-            	<input type="text" name="instituicao" placeholder="Instituição" maxlength="50">
-				<input type="text" name="curso" placeholder="Curso"maxlength="50">
-				<input type="number" name="semestre" placeholder="Semestre" maxlength="2">
-            	<input type="number" name="idade" placeholder="Idade" maxlength="2">
+				<input type="text" name="nome_completo" placeholder="Nome Completo" maxlength="30" autocomplete="off">	
+            	<input type="text" name="usuario"placeholder="Usuário" maxlength="20" autocomplete="off">
+            	<input type="text" name="instituicao" placeholder="Instituição" maxlength="50" autocomplete="off">
+				<input type="text" name="curso" placeholder="Curso"maxlength="50" autocomplete="off">
+				<input type="number" name="semestre" placeholder="Semestre" maxlength="2" autocomplete="off">
+            	<input type="number" min="0" name="idade" placeholder="Idade" maxlength="2" autocomplete="off">
             	<select name="sexo" id="sexo">
 						<option>Sexo</option>
                     	<option value="masculino">Masculino</option>
                     	<option value="femenino">Femenino</option>
             	</select>
-				<input type="email" name="email" placeholder="e-mail" maxlength="50">
+				<input type="email" name="email" placeholder="e-mail" maxlength="50" autocomplete="off">
 				<input type="password" name="senha" placeholder="Senha"
 			 	maxlength="15">
             	<input type="password" name="confirmar_senha" placeholder="Confirmar Senha" maxlength="15">
-            	<input type="submit" value="Cadastrar">			
+            	<input type="submit" value="Cadastrar">          	
 		</form>
 		</div>
 
@@ -50,8 +50,8 @@
 				if($u->msgErro == ""){
 					if($senha == $confirmar_senha){
 						if($u->cadastrar($nome_completo,$usuario,$instituicao,$curso,$semestre,$idade,$email,$senha)){
-							?>
-							<div id= "msg-sucesso">Cadastrado com sucesso! Acesse para entrar!</div>
+							?>							
+							<div id= "msg-sucesso">Cadastrado com sucesso! <a href="index.php">Acesse para entrar!</div></a>
 							<?php
 								}
 							else{
@@ -78,13 +78,9 @@
 						else{
 							?>
 								<div class ="msg-erro">Preencha todos os dados!</div>
-								<?php
-								
+								<?php							
 	}
 }
-			
-	
-
 		 ?>
 	</body>
 </html>
