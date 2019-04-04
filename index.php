@@ -10,13 +10,13 @@
 		<link rel="stylesheet" href="CSS/Style.css">
 	</head>
 	<body>
-		<div id="corpo-form">
+		<div id="corpo-form" style="border: 1px solid red;">
 		<h1>Entrar</h1>			
 		<form method="POST">					
 			<input type="email" placeholder="Email" name="email">
 			<input type="password" placeholder="Senha" name="senha">
 			<input type="submit" placeholder="ACESSAR">
-			<a href="teste.js">Ainda não é inscrito?<strong>Cadastre-se!</strong></a>
+			<p>Ainda não é inscrito?<a href="cadastro_aluno.php"><strong>Cadastre-se!</strong></p>
 		</form>
 		
 		</div>

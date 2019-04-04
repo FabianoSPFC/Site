@@ -30,70 +30,65 @@
         $letra_e = $_POST["E"];
         $dificuldade = $_POST["dificuldade"];
         $resposta = $_POST["resposta"];
-        // verifica se foi enviado um arquivo 
-        if (isset($_FILES['arquivo']['name']) && $_FILES["arquivo"]["error"] == 0) {
-            echo "Você enviou o arquivo: <strong>" . $_FILES['arquivo']['name'] . "</strong><br />";
-            echo "Este arquivo é do tipo: <strong>" . $_FILES['arquivo']['type'] . "</strong><br />";
-            echo "Temporáriamente foi salvo em: <strong>" . $_FILES['arquivo']['tmp_name'] . "</strong><br />";
-            echo "Seu tamanho é: <strong>" . $_FILES['arquivo']['size'] . "</strong> Bytes<br /><br />";
-            $arquivo_tmp = $_FILES['arquivo']['tmp_name'];
-            $nome = $_FILES['arquivo']['name'];
-            // Pega a extensao
-            $extensao = strrchr($nome, '.');
-            // Converte a extensao para mimusculo
-            $extensao = strtolower($extensao);
-            // Somente imagens, .jpg;.jpeg;.gif;.png
-            // Aqui eu enfilero as extesões permitidas e separo por ';'
-            // Isso serve apenas para eu poder pesquisar dentro desta String
-            if (strstr('.jpg;.jpeg;.gif;.png', $extensao)) {
-                // Cria um nome único para esta imagem
-                // Evita que duplique as imagens no servidor.
-                $novoNome = md5(microtime()) . '.' . $extensao;
-                // Concatena a pasta com o nome
-                $destino = 'imagens/' . $novoNome;
-                // tenta mover o arquivo para o destino
-                if (@move_uploaded_file($arquivo_tmp, $destino)) {
-                    echo "Arquivo salvo com sucesso em : <strong>" . $destino . "</strong><br />";
-                    // echo "<img src=\"" . $destino . "\" />";
-                } else
-                    echo "Erro ao salvar o arquivo. Aparentemente você não tem permissão de escrita.<br />";
-            } else
-                echo "Você poderá enviar apenas arquivos \"*.jpg;*.jpeg;*.gif;*.png\"<br />";
-        } else {
-            echo "Você não enviou nenhum arquivo!";
-        }
-        $sql_query = "INSERT INTO created_questions(questao,letra_a,letra_b,letra_c,letra_d,letra_e,resposta) VALUES('$questao','$letra_a','$letra_b','$letra_c','$letra_d','$letra_e','$resposta');";
-        if (mysqli_query($link, $sql_query)) {
-            echo "Deu certo";
-        } else {
-            echo "Deu errado" . mysqli_error($link);
-        }
+        $novoNome = [];
+        //faz operações com os arquivos enviados
+        // for ($i = 0; $i < 5; $i++) {
+        //     // verifica se foi enviado um arquivo 
+        //     if (isset($_FILES['arquivo']['name'][$i]) && $_FILES["arquivo"]["error"][$i] == 0) {
+        //         // echo "Você enviou o arquivo: <strong>" . $_FILES['arquivo']['name'][$i] . "</strong><br />";
+        //         // echo "Este arquivo é do tipo: <strong>" . $_FILES['arquivo']['type'][$i] . "</strong><br />";
+        //         // echo "Temporáriamente foi salvo em: <strong>" . $_FILES['arquivo']['tmp_name'][$i] . "</strong><br />";
+        //         // echo "Seu tamanho é: <strong>" . $_FILES['arquivo']['size'][$i] . "</strong> Bytes<br /><br />";
+        //         $arquivo_tmp = $_FILES['arquivo']['tmp_name'][$i];
+        //         $nome = $_FILES['arquivo']['name'][$i];
+        //         // Pega a extensao
+        //         $extensao = strrchr($nome, '.');
+        //         // Converte a extensao para mimusculo
+        //         $extensao = strtolower($extensao);
+        //         // Somente imagens, .jpg;.jpeg;.gif;.png
+        //         // Aqui eu enfilero as extesões permitidas e separo por ';'
+        //         // Isso serve apenas para eu poder pesquisar dentro desta String
+        //         if (strstr('.jpg;.jpeg;.gif;.png', $extensao)) {
+        //             // Cria um nome único para esta imagem
+        //             // Evita que duplique as imagens no servidor.
+        //             $novoNome[$i] = md5(microtime()) . '.' . $extensao;
+        //             // Concatena a pasta com o nome
+        //             $destino = 'imagens/' . $novoNome[$i];
+        //             // tenta mover o arquivo para o destino
+        //             if (@move_uploaded_file($arquivo_tmp, $destino)) {
+        //                 // echo "Arquivo salvo com sucesso em : <strong>" . $destino . "</strong><br />";
+        //                 // echo "<img src=\"" . $destino . "\" />";
+        //             } else
+        //                 echo "Erro ao salvar o arquivo. Aparentemente você não tem permissão de escrita.<br />";
+        //         } else
+        //             echo "Você poderá enviar apenas arquivos \"*.jpg;*.jpeg;*.gif;*.png\"<br />";
+        //     } else {
+        //         echo "Você não enviou nenhum arquivo!";
+        //     }
+        // }
+        $arr_dados = ['questao' => $questao, 'letra_a' => $letra_a, 'letra_b' => $letra_a, 'letra_c' => $letra_c, 'letra_d' => $letra_d, 'letra_e' => $letra_e, 'caminho' => $novoNome];
+        $teste = $conection->insert($arr_dados);
+        echo $teste;
+        // $sql_query = "INSERT INTO created_questions(questao,letra_a,letra_b,letra_c,letra_d,letra_e,resposta) VALUES('$questao','$letra_a','$letra_b','$letra_c','$letra_d','$letra_e','$resposta');";
+        // if (mysqli_query($link, $sql_query)) {
+        //     echo "Deu certo";
+        // } else {
+        //     echo "Deu errado" . mysqli_error($link);
+        // }
     }
+    // for ($i = 0; $i < count($questao); $i++) {
+    //     echo "<h3>Questão: " . $questao[$i] . "</h3>";
+    //     echo "<p>Imagem:
+    //             <img src=imagens/" . $novoNome[$i] . " alt=' Algum erro aconteceu'>
+    //         </p><br>";
+    //     echo "<p>Letra A: " . $letra_a[$i] . "</p><br>";
+    //     echo "<p>Letra B: " . $letra_b[$i] . "</p><br>";
+    //     echo "<p>Letra C: " . $letra_c[$i] . "</p><br>";
+    //     echo "<p>Letra D: " . $letra_d[$i] . "</p><br>";
+    //     echo "<p>Letra E: " . $letra_e[$i] . "</p><br>";
+    //     echo "<p>Dificuldade: " . $dificuldade[$i] . "</p><br>";
+    // }
     ?>
-    <p>Questão:
-        <?php echo $questao[4] ?>
-    </p><br>
-    <p>Imagem:
-        <img src=<?php echo $destino; ?> alt="">
-    </p><br>
-    <p>Letra A:
-        <?php echo $letra_a[4] ?>
-    </p><br>
-    <p>Letra B:
-        <?php echo $letra_b[4] ?>
-    </p><br>
-    <p>Letra C:
-        <?php echo $letra_c[4] ?>
-    </p><br>
-    <p>Letra D:
-        <?php echo $letra_d[4] ?>
-    </p><br>
-    <p>Letra E:
-        <?php echo $letra_e[4] ?>
-    </p><br>
-    <p>Resposta:
-        <?php echo $resposta[4] ?>
-    </p><br>
 
 </body>
 
