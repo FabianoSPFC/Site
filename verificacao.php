@@ -17,19 +17,11 @@
 </head>
 
 <body>
-<<<<<<< HEAD
     <?php    
         require('db_conncetion.php');
         $conection = new db();
         $link = $conection->conect_mysql();
         if($_SERVER["REQUEST_METHOD"] == "POST"){
-=======
-    <?php 
-    require('db.php');
-    $conection = new db();
-    $link = $conection->conect_mysql();
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
->>>>>>> a4fb1992de93522f6eecd832e2bd2c1172e26211
         $questao = $_POST["questao"];
         $letra_a = $_POST["A"];
         $letra_b = $_POST["B"];
@@ -70,13 +62,8 @@
         } else {
             echo "Você não enviou nenhum arquivo!";
         }
-<<<<<<< HEAD
-        $sql_query = "INSERT INTO created questions(questao,letra_a,letra_b,letra_c,letra_d,letra_e,resposta) VALUES('$questao','$letra_a','$letra_b','$letra_c','$letra_d','$letra_e','$resposta');";     
-        if(mysqli_query($link,$sql_query)){
-=======
         $sql_query = "INSERT INTO created_questions(questao,letra_a,letra_b,letra_c,letra_d,letra_e,resposta) VALUES('$questao','$letra_a','$letra_b','$letra_c','$letra_d','$letra_e','$resposta');";
         if (mysqli_query($link, $sql_query)) {
->>>>>>> a4fb1992de93522f6eecd832e2bd2c1172e26211
             echo "Deu certo";
         } else {
             echo "Deu errado" . mysqli_error($link);
