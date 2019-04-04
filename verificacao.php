@@ -30,6 +30,7 @@
         $letra_e = $_POST["E"];
         $dificuldade = $_POST["dificuldade"];
         $resposta = $_POST["resposta"];
+        $arr_questoes = [];
         $novoNome = [];
         //faz operações com os arquivos enviados
         // for ($i = 0; $i < 5; $i++) {
@@ -66,28 +67,21 @@
         //         echo "Você não enviou nenhum arquivo!";
         //     }
         // }
-        $arr_dados = ['questao' => $questao, 'letra_a' => $letra_a, 'letra_b' => $letra_a, 'letra_c' => $letra_c, 'letra_d' => $letra_d, 'letra_e' => $letra_e, 'caminho' => $novoNome];
-        $teste = $conection->insert($arr_dados);
-        echo $teste;
-        // $sql_query = "INSERT INTO created_questions(questao,letra_a,letra_b,letra_c,letra_d,letra_e,resposta) VALUES('$questao','$letra_a','$letra_b','$letra_c','$letra_d','$letra_e','$resposta');";
-        // if (mysqli_query($link, $sql_query)) {
-        //     echo "Deu certo";
-        // } else {
-        //     echo "Deu errado" . mysqli_error($link);
-        // }
+        for($i = 0; $i<count($questao);$i++){
+            $arr_questoes[i] = new questao($questao[i], $letra_a[i],$letra_b[i],$letra_c[i],$letra_d[i],$letra_e[i], $novoNome[i], $resposta[i], $dificuldade[i]);
+            echo "<h3>Questão: " . $arr_questoes[i]->getQuestao() . "</h3>";
+            echo "<p>Imagem:
+                    <img src=imagens/" . $novoNome[$i] . " alt=' Algum erro aconteceu'>
+                </p><br>";
+            echo "<p>Letra A: " . $letra_a[$i] . "</p><br>";
+            echo "<p>Letra B: " . $letra_b[$i] . "</p><br>";
+            echo "<p>Letra C: " . $letra_c[$i] . "</p><br>";
+            echo "<p>Letra D: " . $letra_d[$i] . "</p><br>";
+            echo "<p>Letra E: " . $letra_e[$i] . "</p><br>";
+            echo "<p>Dificuldade: " . $dificuldade[$i] . "</p><br>";
+        }
     }
-    // for ($i = 0; $i < count($questao); $i++) {
-    //     echo "<h3>Questão: " . $questao[$i] . "</h3>";
-    //     echo "<p>Imagem:
-    //             <img src=imagens/" . $novoNome[$i] . " alt=' Algum erro aconteceu'>
-    //         </p><br>";
-    //     echo "<p>Letra A: " . $letra_a[$i] . "</p><br>";
-    //     echo "<p>Letra B: " . $letra_b[$i] . "</p><br>";
-    //     echo "<p>Letra C: " . $letra_c[$i] . "</p><br>";
-    //     echo "<p>Letra D: " . $letra_d[$i] . "</p><br>";
-    //     echo "<p>Letra E: " . $letra_e[$i] . "</p><br>";
-    //     echo "<p>Dificuldade: " . $dificuldade[$i] . "</p><br>";
-    // }
+    
     ?>
 
 </body>
