@@ -16,8 +16,12 @@ class db{
         }
         return $con;
     }
+    function getDatabase(){
+        return $this->database;
+    }
+
     public function insert($data){
-            var_dump($data);
+            
         
     }
 }
